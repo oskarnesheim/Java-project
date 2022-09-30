@@ -1,0 +1,18 @@
+@startuml 2048
+
+player -> controller : D (move to the right)
+    controller -> Board : right(true,true)
+        Board -> rowComparator : Collections.sort(row, rowComparator) 
+        Board <- rowComparator : sorted row
+            Board -> Tile : updateTileValue(n)
+            Board <- Tile : updated Tile
+    controller <- Board : updated Board
+player <- controller : updated Board, score
+
+player -> controller : W (move up)
+    controller -> Board : up(true,true)
+        Board -> rowComparator : Collections.sort(row, rowComparator) 
+        Board <- rowComparator : sorted row
+    controller <- Board : updated Board(gameStatus: false)
+player <- controller : "You lost the game, your score was ..."
+@enduml

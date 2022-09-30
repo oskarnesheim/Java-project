@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" prefHeight="803.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2048.GameController">
+   <children>
+      <Label layoutX="36.0" layoutY="688.0" prefHeight="32.0" prefWidth="70.0" style="-fx-font-size: 20px;" text="Score:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="199.0" layoutY="691.0" text="HighScore">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="148.0" layoutY="727.0" />
+      <Label layoutX="36.0" layoutY="727.0" prefHeight="26.0" prefWidth="89.0" text="Username">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="getGame" layoutX="418.0" layoutY="727.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="26.0" prefWidth="80.0" text="Get Game" />
+      <Text fx:id="scoreField" layoutX="131.0" layoutY="709.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="53.999999999999886" />
+      <Text fx:id="highScoreField" layoutX="325.0" layoutY="709.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="79.21630859375" />
+      <GridPane fx:id="grid" hgap="10.0" layoutX="106.0" layoutY="119.0" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: grey;" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+      <Button fx:id="saveGame" layoutX="325.0" layoutY="727.0" mnemonicParsing="false" onAction="#saveGame" text="Save Game" />
+      <Button fx:id="startButton" layoutX="514.0" layoutY="699.0" mnemonicParsing="false" onAction="#newGame" prefHeight="56.0" prefWidth="142.0" text="Start Game" />
+      <Text fx:id="overSkrift" layoutX="217.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen til 2048 ! " wrappingWidth="374.720703125">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Text>
+      <Pane fx:id="frontpage" layoutX="122.0" layoutY="134.0" prefHeight="522.0" prefWidth="518.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="99.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bruk W, A, S, D for å flytte brikkene. " wrappingWidth="310.08056640625">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="123.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hvordan spiller man?">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trykk på Start Game for å starte et spill!">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="103.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis to brikker med lik verdi slås sammnen,  får du poeng. " wrappingWidth="374.720703125">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text layoutX="677.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P = pause" />
+      <Text layoutX="677.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R = restart Game" />
+      <Text layoutX="677.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shortcuts">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
